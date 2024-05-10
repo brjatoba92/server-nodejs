@@ -6,3 +6,6 @@ CREATE TABLE "events" (
     "slug" TEXT NOT NULL,
     "maximum_attendees" INTEGER
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "events_slug_key" ON "events"("slug");

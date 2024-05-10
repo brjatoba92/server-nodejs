@@ -28,3 +28,23 @@ O sistema fará um scan da credencial do participante para permitir a entrada no
 ### Requisitos não-funcionais
 
 - [x] O check-in no evento será realizado através de um QRCode;
+
+# Comentarios:
+
+Metodos HTTP: GET, POST, PUT, DELETE, DELETE, PATCH, HEAD, OPTIONS, ...
+
+Corpo de requisição (Request Body)
+Parametros de busca (Search Params / Query Parameter)
+Parametros de rota (Route Params)
+Cabeçalhos (Headers) - Contexto da requisição
+
+Semanticas = Significado
+
+Driver nativo / Qury Builders / ORMs
+
+Object Relational Mapping (Hibernate / Doctrine / ActiveRecord)
+
+20x - Sucesso
+30x - Redirecionamento
+40x - Erro do cliente (Erro em alguma informação enviada por QUEM está fazendo a chamada p/ API)
+50x - Erro do servidor (Um erro que está acontecendo INDEPENDENTEMENTE do que está sendo enviado p/ o servidor)

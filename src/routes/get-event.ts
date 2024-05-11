@@ -8,11 +8,13 @@ export async function getEvent(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .get('/events/:eventId', {
       schema: {
+        summary: 'Get an event',
+        tags: ['events'],
         params: z.object({
           eventId: z.string().uuid(),
         }),
         response: {
-          200: {
+          200: z.object({
             event: z.object({
               id: z.string().uuid(),
               title: z.string(),
@@ -21,7 +23,7 @@ export async function getEvent(app: FastifyInstance) {
               maximumAttendees: z.number().int().nullable(),
               attendeeesAmount: z.number().int(),
             })
-          },
+          }),
         },
       }
     }, async (request, reply) => {
@@ -56,7 +58,7 @@ export async function getEvent(app: FastifyInstance) {
             slug: event.slug,
             details: event.details,
             maximumAttendees: event.maximumAttendees,
-            attendeesAmount: event._count.attendees,
+            attendeeesAmount: event._count.attendees,
           } 
         })
     })
